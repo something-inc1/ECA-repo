@@ -1,4 +1,15 @@
 Links to datasets:
 
+###
 Sample:
 1. https://www.linktodataset.com/item
+
+###
+
+1.https://drive.google.com/drive/folders/0B7EVK8r0v71pQ2FuZ0k0QnhBQnc	#Fashion Data Base from some Chinese University
+
+https://archive.ics.uci.edu/ml/datasets.html	#UCI Collection of Datasets
+
+https://www.visualdata.io/			#List of Data sets that can be used
+
+https://github.com/switchablenorms/DeepFashion2/blob/master/README.md	#Deep Fashion2 Data set - Clothing with Rectangular annotation
