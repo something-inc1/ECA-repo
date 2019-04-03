@@ -1,6 +1,8 @@
 # ECA-repo
 E-commerce recommendation of products based on set criteria 
 
+(Assuming Git is pre-installed and setup)
+ 
 Steps to download:
 
 	Windows,
