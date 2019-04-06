@@ -13,3 +13,11 @@ Sample:
 3.https://www.visualdata.io/			#List of Data sets that can be used
 
 4.https://github.com/switchablenorms/DeepFashion2/blob/master/README.md	#Deep Fashion2 Data set - Clothing with Rectangular annotation
+
+5.https://storage.googleapis.com/openimages/web/index.html 	#Open Images V4 Dataset
+
+6.http://tamaraberg.com/street2shop/	#11 Categories of clothing items with bounding boxes
+
+7.http://ai.stanford.edu/~jkrause/cars/car_dataset.html  #The Cars dataset contains 16,185 images of 196 classes of cars by Stanford
+
+8.http://cogcomp.org/Data/Car/ #UIUC Image Database for Car Detection
