@@ -156,8 +156,9 @@ def detect(net, meta, image, fname='', target_base_path='', thresh=.5, hier_thre
     
     for i in range(len(res)):
         dict_cat_len[res[i][0].decode('utf8')] += 1
-        dict_cat[res[i][0].decode('utf8')].append(res[i][2])
-        
+        dict_cat[res[i][0].decode('utf8')].append([res[i][2][0]/im.w,res[i][2][1]/im.h,res[i][2][2]/im.w,res[i][2][3]/im.h])
+       
+#     print(im.w,im.h)
     
     for keys in dict_cat.keys():
         cat = keys
