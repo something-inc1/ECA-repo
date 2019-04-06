@@ -46,3 +46,42 @@ Target directory format:
 		|-----|  ...
 		|-----|---catn/
 
+
+Visualisation:
+
+	parameters: 
+
+		--src_path	:	Path to the source directory
+
+	command line (from darknet directory):
+	
+ 		python Visualisation.py --src_path /path/to/your/image/dir 
+
+	example usage: python3 Visualisation.py  --src_path data/
+
+This script will add Visualize dir to the sorted dataset.
+
+Target directory format:
+
+	target_base_path
+		|
+		|---Images/
+		|-----|
+		|-----|---cat1/
+		|-----|---cat2/
+		|-----|  ...
+		|-----|---catn/
+		|--- Labels/
+		|-----|
+		|-----|---cat1/
+		|-----|---cat2/
+		|-----|  ...
+		|-----|---catn/
+		|--- Visualize/
+		|-----|
+		|-----|---cat1/
+		|-----|---cat2/
+		|-----|  ...
+		|-----|---catn/
+
+

@@ -140,12 +140,11 @@ def detect(net, meta, image, fname='', target_base_path='', thresh=.5, hier_thre
         for i in range(meta.classes):
             if dets[j].prob[i] > 0:
                 b = dets[j].bbox
-                res.append((meta.names[i], dets[j].prob[i], (b.x, b.y, b.w, b.h)))
+                res.append((meta.names[i], dets[j].prob[i], (b.x-b.w/2, b.y-b.h/2, b.x+b.w/2, b.y+b.h/2)))
     res = sorted(res, key=lambda x: -x[1])
     free_image(im)
     free_detections(dets, num)
-#     res = np.array(res)
-#     print(len(res))
+    
     dict_cat_len = {}
     dict_cat = {}
    
@@ -158,22 +157,16 @@ def detect(net, meta, image, fname='', target_base_path='', thresh=.5, hier_thre
         dict_cat_len[res[i][0].decode('utf8')] += 1
         dict_cat[res[i][0].decode('utf8')].append([res[i][2][0]/im.w,res[i][2][1]/im.h,res[i][2][2]/im.w,res[i][2][3]/im.h])
        
-#     print(im.w,im.h)
     
     for keys in dict_cat.keys():
         cat = keys
-#         cat = res[0][0].decode('utf8')
+
         os.makedirs(os.path.join(target_base_path,'Labels',cat),exist_ok=True)
-    #     print(res[0][1])
         with open(os.path.join(target_base_path,'Labels',cat,fname),'w') as f:
             f.write(str(dict_cat_len[keys])+'\n')
-#             x1,y1,x2,y2 = np.asarray(res[0][2],dtype=np.str)
             for k in range(len(dict_cat[keys])):
                 f.write(','.join(np.asarray(dict_cat[keys][k],dtype=np.str)))
                 f.write('\n')
-#         f.write(y2)
-               
-#     print([0])
     
     return res,dict_cat_len
 
@@ -184,7 +177,7 @@ def main(src_path,target_path):
         file = files[j]
         if not file.endswith('jpg') or file.endswith('png') or file.endswith('jpeg'):
             continue
-#         print(file)
+            
         inp_file = os.path.join(src_path,file).encode('utf8')
         meta = load_meta(b"cfg/coco.data")
         r,d_cat = detect(net, meta, inp_file, fname=file.split('.')[0]+'.txt', target_base_path=target_path)
